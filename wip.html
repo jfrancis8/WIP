@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+<style>
+ .div1 {
+	margin: auto;
+	background-color: #3D3D3D;
+	border: 2px solid aqua;
+	height: 375px;
+	width: 50%;
+	box-sizing: border-box;
+ }
+ *{padding:0;margin:0;}
+body{font:16px/1 sans-serif}
+ nav.vertical{
+  position:relative;
+  width:200px;
+}
+
+/* ALL UL */
+nav.vertical ul{
+  list-style: none;
+}
+/* ALL LI */
+nav.vertical li{
+  position:relative;
+}
+/* ALL A */
+nav.vertical a{
+  display:block;
+  color:#eee;
+  text-decoration:none;
+  padding:10px 15px;
+  background:#667;
+  transition:0.2s;
+}
+/* ALL A HOVER */
+nav.vertical li:hover > a{
+  background:#778;
+}
+
+/* INNER UL HIDE */
+nav.vertical ul ul{
+  position:absolute;
+  left:0%;
+  top:0;
+  visibility:hidden;
+  opacity:0;
+  transition: transform 0.2s;
+  transform: translateX(50px);
+  width: 100%;
+}
+/* INNER UL SHOW */
+nav.vertical li:hover > ul{
+  left:100%;
+  visibility:visible;
+  opacity:1;
+  transform: translateX(0px);
+}
+ 
+</style>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<div class ="div1">
+	<nav class ="vertical">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="#">Products +</a>
+			  <ul>
+				<li><a href="#">Widgets</a></li>
+				<li>
+				  <a href="#">Sites +</a>
+				  <ul>
+					<li><a href="#">Site 1</a></li>
+					<li><a href="#">Site 2</a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="#">Gadgets +</a>
+				  <ul>
+					<li><a href="#">Gadget 1</a></li>
+					<li><a href="#">Gadget 2</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			</li>
+			<li><a href="">Contact</a></li>
+	  </ul>
+	</nav>
+</div>
+</body>
+</html> 
