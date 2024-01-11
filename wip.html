@@ -4,10 +4,32 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <title> Welcome </title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
 
 
   body{
-    font:16px sans-serif;
+    font: 16px sans-serif;
+    height:100%;
+  }
+
+  #txt{
+    position: absolute;
+    top:30%;
+    width: 100%;
+    text-align: center;
+    font-size: 150px;
+    font-family: 'Geo', sans-serif;
+    font: Geo-Italic;
+    color:rgb(255, 255, 255);
+    animation: glow 30s ease-in-out infinite alternate;
+    opacity: 0.75;
+  }
+  .content-container{
+    position: absolute;
+    top:20%;
+    left:20%;
+    width:850px;
+    height: 400px;
   }
 
   .container{
@@ -92,10 +114,19 @@
     right: 35px;
     }
   }
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px aqua, 0 0 20px aqua, 0 0 25px aqua, 0 0 30px aqua, 0 0 35px aqua;
+    }
+    
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 15px aquamarine, 0 0 20px aquamarine, 0 0 25px aquamarine, 0 0 30px aquamarine, 0 0 35px aquamarine, 0 0 40px aquamarine;
+    }
+  }
 </style>
 </head>
 
-<body>
+<body onload="startTime()">
   <div class="container">  
     <div class="nav-icons">
         <button type="button" onclick="openHead()"><i class="material-icons" >headset</i></button>
@@ -161,9 +192,31 @@
             </div>
           </div>
         </button>  
-    </div>    
+    </div>   
   </div>
+  <div class="content-container">
+    <div class="clock">
+      <div id="txt"></div>
+    </div>
+  </div>
+
   <script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+      setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    
     function openHead() {
       document.getElementById("headNav").style.width = "100%";
     }
