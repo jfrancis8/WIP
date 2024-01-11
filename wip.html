@@ -1,119 +1,208 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Welcome</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title> Welcome </title>
 <style>
- .div1 {
-	margin: auto;
-	background-color: #3D3D3D;
-	border: 2px solid aqua;
-	height: 375px;
-	width: 50%;
-	box-sizing: border-box;
+
+
+  body{
+    font:16px sans-serif;
+  }
+
+  .container{
+    width: 55px;
+    margin-top: 20%;
+    
+  }
+
+  html {
+    background: url(arcd.jpg) no-repeat center fixed;
+    background-size: cover;
+  }
+
+  .nav-icons{
+    overflow: hidden;
+    
  }
- *{padding:0;margin:0;}
-body{font:16px/1 sans-serif}
- nav.vertical{
-  position:relative;
-  width:200px;
-}
 
-/* ALL UL */
-nav.vertical ul{
-  list-style: none;
-}
-/* ALL LI */
-nav.vertical li{
-  position:relative;
-}
-/* ALL A */
-nav.vertical a{
-  display:block;
-  color:#eee;
-  text-decoration:none;
-  padding:10px 15px;
-  background:#667;
-  transition:0.2s;
-}
-/* ALL A HOVER */
-nav.vertical li:hover > a{
-  background:#778;
-}
+ .nav-icons button {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size:48px;
+    color:rgb(183, 0, 115);
+    background-color: rgba(0, 128, 0, 0.01);
+    cursor: pointer;
+    border: none;
+  }
 
-/* INNER UL HIDE */
-nav.vertical ul ul{
-  position:absolute;
-  left:0%;
-  top:0;
-  visibility:hidden;
-  opacity:0;
-  transition: transform 0.2s;
-  transform: translateX(50px);
-  width: 100%;
-}
-/* INNER UL SHOW */
-nav.vertical li:hover > ul{
-  left:100%;
-  visibility:visible;
-  opacity:1;
-  transform: translateX(0px);
-}
- /*
- TODO: 
- Change display of lists to block to have vertical alignment
- Change from hover to button 
- Have Icons set from beginning use icons that dont take up too much visual space
- Use Icons as buttons which bring out list items
- */
+  .button :hover {
+    color: cyan;
+  }
 
- 
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
 </style>
 </head>
+
 <body>
+  <div class="container">  
+    <div class="nav-icons">
+        <button type="button" onclick="openHead()"><i class="material-icons" >headset</i></button>
+          <div id="headNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeHead()">&times;</a>
+            <div class="overlay-content">
+              <a href="https://youtube.com/home/">youtube</a>
+              <a href="https://twitch.tv/">twitch</a>
+              <a href="https://play.pokemonshowdown.com/">showdown</a>
+              <a href="https://netflix.com">netflix</a>
+              <a href="https://dopebox.to/">dopebox</a>
+              <a href="https://myflixters.to/">flixter</a>
+            </div>
+          </div>
+        </button>  
+        <button type="button" onclick="openForum()"><i class="material-icons" >forum</i></button>
+          <div id="forumNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeForum()">&times;</a>
+            <div class="overlay-content">
+              <a href="https://letterboxd.com/">letterboxd</a>
+              <a href="https://last.fm/">last.fm</a>
+              <a href="https://twitter.com/">twitter</a>
+              <a href="https://boards.4chan.org/wg/">/wg/</a>
+              <a href="https://reddit.com/r/ssbm/">SSBM</a>
+              <a href="https://reddit.com/r/nba/">NBA</a>
+            </div>
+          </div>
+        </button>  
+        <button type="button" onclick="openBook()"><i class="material-icons">book</i></button>
+          <div id="bookNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeBook()">&times;</a>
+            <div class="overlay-content">
+              <a href="https://www.mangadex.org/">mangadex</a>
+              <a href="http://www.readcomiconline.to/">comics</a>
+              <a href="http://libgen.rs/">libgen</a>
+              <a href="https://arstechnica.com/">ars technica</a>
+              <a href="https://en.wikipedia.org/">wikipedia</a>
+            </div>
+          </div>
+        </button>  
+        <button type="button" onclick="openSchool()"><i class="material-icons">school</i></button>
+          <div id="schoolNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSchool()">&times;</a>
+            <div class="overlay-content">
+              <a href="https://www.w3schools.com/">w3</a>
+              <a href="https://www.codeacademy.com/">codeacademy</a>
+              <a href="https://www.stormwindstudios.com/courses">stormwind</a>
+              <a href="https://www.coursera.com/">coursera</a>
+              <a href="https://www.figma.com/">figma</a>
+            </div>
+          </div>
+        </button>
+        <button type="button" onclick="openShop()"><i class="material-icons">shopping_bag</i></button>
+          <div id="shopNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeShop()">&times;</a>
+            <div class="overlay-content">
+              <a href="https://www.amazon.com/">amazon</a>
+              <a href="https://www.ebay.com/">ebay</a>
+              <a href="https://www.grailed.com/">grailed</a>
+              <a href="https://www.bhphotovideo.com/">b&h</a>
+              <a href="https://stockx.com/">stockx</a>
+              <a href="https://goat.com/">GOAT</a>
+            </div>
+          </div>
+        </button>  
+    </div>    
+  </div>
+  <script>
+    function openHead() {
+      document.getElementById("headNav").style.width = "100%";
+    }
+    
+    function closeHead() {
+      document.getElementById("headNav").style.width = "0%";
+    }
 
-<h1>This is a Heading</h1>
-<div class ="div1">
-	<nav class ="vertical">
-		<ul>
-			<li><a href="">reading</a>
-				<ul>
-					<li><a href="$">waga</a></li>
-						<li>
-							<a href="$">baba</a>
-							<ul>
-								<li><a href="$">bo</a></li>
-								<li><a href="$">bo</a></li>
-							</ul>
-						</li>
-				</ul> 
-			</li>
-			<li><a href="">social</a>
-				<ul>
-					
-				</ul>
-			</li>  
-			<li><a href="#">video</a>
-				<ul>
+    function openForum() {
+      document.getElementById("forumNav").style.width = "100%";
+    }
+    
+    function closeForum() {
+      document.getElementById("forumNav").style.width = "0%";
+    }
 
-				</ul>
-			</li>
-			<li><a href="">shopwon</a>
-				<ul>
+    function openSchool() {
+      document.getElementById("schoolNav").style.width = "100%";
+    }
+    
+    function closeSchool() {
+      document.getElementById("schoolNav").style.width = "0%";
+    }
 
-				</ul>
-			</li>
-			<li><a href="">gamez</a>
-				<ul>
+    function openBook() {
+      document.getElementById("bookNav").style.width = "100%";
+    }
+    
+    function closeBook() {
+      document.getElementById("bookNav").style.width = "0%";
+    }
 
-				</ul>
-			</li>
-			<li><a href="">resourcewon</a>
-				<ul>
-
-				</ul>
-			</li>
-		</ul>	
-	</nav>
-</div>
+    function openShop() {
+      document.getElementById("shopNav").style.width = "100%";
+    }
+    
+    function closeShop() {
+      document.getElementById("shopNav").style.width = "0%";
+    }
+    </script>
 </body>
-</html> 
+</html>    
