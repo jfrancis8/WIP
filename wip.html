@@ -17,13 +17,27 @@
     top:30%;
     width: 100%;
     text-align: center;
-    font-size: 150px;
-    font-family: 'Geo', sans-serif;
+    font-size: 125px;
+    font-family: 'Abduction2002 Regular', sans-serif;
     font: Geo-Italic;
     color:rgb(255, 255, 255);
     animation: glow 30s ease-in-out infinite alternate;
     opacity: 0.75;
   }
+
+  #demo{
+	position: absolute;
+    top:65%;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Thunder Titan Engraved Regular', sans-serif;
+    font: Thunder-Titan-3D-Regular;
+    color:rgb(255, 255, 255);
+    animation: glow 30s ease-in-out infinite alternate;
+    opacity: 0.90;
+  }
+
   .content-container{
     position: absolute;
     top:20%;
@@ -126,7 +140,7 @@
 </style>
 </head>
 
-<body onload="startTime()">
+<body onload="startTime(),checkDay()">
   <div class="container">  
     <div class="nav-icons">
         <button type="button" onclick="openHead()"><i class="material-icons" >headset</i></button>
@@ -197,6 +211,7 @@
   <div class="content-container">
     <div class="clock">
       <div id="txt"></div>
+	  <div id="demo"></div>
     </div>
   </div>
 
@@ -217,6 +232,13 @@
       return i;
     }
     
+	function checkDay(){
+		const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+		const d = new Date();
+		let day = days[d.getDay()];
+		document.getElementById("demo").innerHTML = day;
+	}
     function openHead() {
       document.getElementById("headNav").style.width = "100%";
     }
