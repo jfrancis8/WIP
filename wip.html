@@ -5,10 +5,13 @@
 <title> Welcome </title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
-
+@font-face {
+  font-family: 'Abduction 2002';
+  src: url(abduction2002.tff);
+}
 
   body{
-    font: 16px sans-serif;
+    font: 16px ;
     height:100%;
   }
 
@@ -18,11 +21,11 @@
     width: 100%;
     text-align: center;
     font-size: 125px;
-    font-family: 'Abduction2002 Regular', sans-serif;
-    font: Geo-Italic;
+    font-family: 'Abduction2002', sans-serif;
+    font: Abduction 2002;
     color:rgb(255, 255, 255);
     animation: glow 30s ease-in-out infinite alternate;
-    opacity: 0.75;
+    opacity: 0.7;
   }
 
   #demo{
@@ -31,11 +34,11 @@
     width: 100%;
     text-align: center;
     font-size: 50px;
-    font-family: 'Thunder Titan Engraved Regular', sans-serif;
-    font: Thunder-Titan-3D-Regular;
+    font-family: 'Thunder Titan Engraved', sans-serif;
+    font: thundertitanengrave;
     color:rgb(255, 255, 255);
     animation: glow 30s ease-in-out infinite alternate;
-    opacity: 0.90;
+    opacity: 0.80;
   }
 
   .content-container{
@@ -70,13 +73,13 @@
     text-decoration: none;
     font-size:48px;
     color:rgb(183, 0, 115);
-    background-color: rgba(0, 128, 0, 0.01);
+    background-color: rgba(0, 128, 0, 0.0);
     cursor: pointer;
     border: none;
   }
 
-  .button :hover {
-    color: cyan;
+  .nav-icons button :hover {
+    animation: glow2 5s ease-in-out infinite alternate;
   }
 
   .overlay {
@@ -137,17 +140,27 @@
       text-shadow: 0 0 10px #fff, 0 0 15px aquamarine, 0 0 20px aquamarine, 0 0 25px aquamarine, 0 0 30px aquamarine, 0 0 35px aquamarine, 0 0 40px aquamarine;
     }
   }
+
+  @-webkit-keyframes glow2 {
+    from {
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px aqua, 0 0 4px aqua, 0 0 5px aqua, 0 0 6px aqua, 0 0 7px aqua;
+    }
+    
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 7px aquamarine, 0 0 10px aquamarine, 0 0 12px aquamarine, 0 0 15px aquamarine, 0 0 17px aquamarine, 0 0 20px aquamarine;
+    }
+  }
 </style>
 </head>
 
 <body onload="startTime(),checkDay()">
   <div class="container">  
     <div class="nav-icons">
-        <button type="button" onclick="openHead()"><i class="material-icons" >headset</i></button>
+      <button type="button" onclick="openHead()"><i class="material-icons" >headset</i></button>
           <div id="headNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeHead()">&times;</a>
             <div class="overlay-content">
-              <a href="https://youtube.com/home/">youtube</a>
+              <a href="https://youtube.com/">youtube</a>
               <a href="https://twitch.tv/">twitch</a>
               <a href="https://play.pokemonshowdown.com/">showdown</a>
               <a href="https://netflix.com">netflix</a>
@@ -205,13 +218,20 @@
               <a href="https://goat.com/">GOAT</a>
             </div>
           </div>
-        </button>  
+      </button>  
     </div>   
   </div>
   <div class="content-container">
-    <div class="clock">
+    <div class="button" id="btn1" onclick = "show('cont1');hide('cont2');tog('btn1');toh('btn2');"></div>
+    <div class="button" id="btn2" onclick = "show('cont2');hide('cont1');tog('btn2');toh('btn1');"></div>
+    <div class="clock" id="cont1">
       <div id="txt"></div>
-	  <div id="demo"></div>
+	    <div id="demo"></div>
+    </div>
+    <div class="vid" id="cont2" style="display:none">
+      <div class="vid-container">
+
+      </div>  
     </div>
   </div>
 
