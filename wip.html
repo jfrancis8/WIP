@@ -28,6 +28,35 @@
     opacity: 0.7;
   }
 
+  #btn1 {
+    width:12px;
+    height:12px;
+    float: left;
+    margin-right:2px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    background-color:#ffffff;
+  }
+
+  #btn1:hover {
+    background-color:#aaaaaa!important;
+  }
+
+  #btn2:hover {
+    background-color:#aaaaaa!important;
+  }
+  #btn2 {
+    width:12px;
+    height:12px;
+    float: left;
+    margin-right:2px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    background-color:#ffffff;
+  }
+
   #demo{
 	position: absolute;
     top:65%;
@@ -73,13 +102,13 @@
     text-decoration: none;
     font-size:48px;
     color:rgb(183, 0, 115);
-    background-color: rgba(0, 128, 0, 0.0);
+    background-color: transparent;
     cursor: pointer;
     border: none;
   }
 
   .nav-icons button :hover {
-    animation: glow2 5s ease-in-out infinite alternate;
+    animation: glow2 2.5s ease-in-out infinite alternate;
   }
 
   .overlay {
@@ -160,12 +189,12 @@
           <div id="headNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeHead()">&times;</a>
             <div class="overlay-content">
-              <a href="https://youtube.com/">youtube</a>
-              <a href="https://twitch.tv/">twitch</a>
-              <a href="https://play.pokemonshowdown.com/">showdown</a>
-              <a href="https://netflix.com">netflix</a>
-              <a href="https://dopebox.to/">dopebox</a>
-              <a href="https://myflixters.to/">flixter</a>
+              <a href="https://youtube.com/" target="_blank">youtube</a>
+              <a href="https://twitch.tv/" target="_blank">twitch</a>
+              <a href="https://play.pokemonshowdown.com/" target="_blank">showdown</a>
+              <a href="https://netflix.com" target="_blank">netflix</a>
+              <a href="https://dopebox.to/" target="_blank">dopebox</a>
+              <a href="https://myflixters.to/" target="_blank">flixter</a>
             </div>
           </div>
         </button>  
@@ -173,12 +202,12 @@
           <div id="forumNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeForum()">&times;</a>
             <div class="overlay-content">
-              <a href="https://letterboxd.com/">letterboxd</a>
-              <a href="https://last.fm/">last.fm</a>
-              <a href="https://twitter.com/">twitter</a>
-              <a href="https://boards.4chan.org/wg/">/wg/</a>
-              <a href="https://reddit.com/r/ssbm/">SSBM</a>
-              <a href="https://reddit.com/r/nba/">NBA</a>
+              <a href="https://letterboxd.com/" target="_blank">letterboxd</a>
+              <a href="https://last.fm/" target="_blank">last.fm</a>
+              <a href="https://twitter.com/" target="_blank">twitter</a>
+              <a href="https://boards.4chan.org/wg/" target="_blank">/wg/</a>
+              <a href="https://reddit.com/r/ssbm/" target="_blank">SSBM</a>
+              <a href="https://reddit.com/r/nba/" target="_blank">NBA</a>
             </div>
           </div>
         </button>  
@@ -186,11 +215,11 @@
           <div id="bookNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeBook()">&times;</a>
             <div class="overlay-content">
-              <a href="https://www.mangadex.org/">mangadex</a>
-              <a href="http://www.readcomiconline.to/">comics</a>
-              <a href="http://libgen.rs/">libgen</a>
-              <a href="https://arstechnica.com/">ars technica</a>
-              <a href="https://en.wikipedia.org/">wikipedia</a>
+              <a href="https://www.mangadex.org/" target="_blank">mangadex</a>
+              <a href="http://www.readcomiconline.to/" target="_blank">comics</a>
+              <a href="http://libgen.rs/" target="_blank">libgen</a>
+              <a href="https://arstechnica.com/" target="_blank">ars technica</a>
+              <a href="https://en.wikipedia.org/" target="_blank">wikipedia</a>
             </div>
           </div>
         </button>  
@@ -198,11 +227,11 @@
           <div id="schoolNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSchool()">&times;</a>
             <div class="overlay-content">
-              <a href="https://www.w3schools.com/">w3</a>
-              <a href="https://www.codeacademy.com/">codeacademy</a>
-              <a href="https://www.stormwindstudios.com/courses">stormwind</a>
-              <a href="https://www.coursera.com/">coursera</a>
-              <a href="https://www.figma.com/">figma</a>
+              <a href="https://www.w3schools.com/" target="_blank">w3</a>
+              <a href="https://www.codeacademy.com/" target="_blank">codeacademy</a>
+              <a href="https://www.stormwindstudios.com/courses" target="_blank">stormwind</a>
+              <a href="https://www.coursera.com/" target="_blank">coursera</a>
+              <a href="https://www.figma.com/" target="_blank">figma</a>
             </div>
           </div>
         </button>
@@ -221,7 +250,7 @@
       </button>  
     </div>   
   </div>
-  <div class="content-container">
+  <div class="content-container" >
     <div class="button" id="btn1" onclick = "show('cont1');hide('cont2');tog('btn1');toh('btn2');"></div>
     <div class="button" id="btn2" onclick = "show('cont2');hide('cont1');tog('btn2');toh('btn1');"></div>
     <div class="clock" id="cont1">
@@ -230,7 +259,8 @@
     </div>
     <div class="vid" id="cont2" style="display:none">
       <div class="vid-container">
-
+        <div class="sidebar" style="background-image: url(img/m2.gif);"></div>
+        <iframe width="75%" height="315" src="//www.youtube.com/embed/WgDMBeoAQ_M" frameborder="0" allowfullscreen></iframe> 
       </div>  
     </div>
   </div>
@@ -297,6 +327,19 @@
     
     function closeShop() {
       document.getElementById("shopNav").style.width = "0%";
+    }
+
+    function show( show1 ) {
+      document.getElementById(show1).style.display="block";
+    }
+    function hide( hide1 ) {
+      document.getElementById(hide1).style.display="none";
+    }
+    function tog( tog1 ) {
+      document.getElementById(tog1).style.backgroundColor="#777777";
+    }
+    function toh( toh1 ) {
+      document.getElementById(toh1).style.backgroundColor="#ffffff";
     }
     </script>
 </body>
